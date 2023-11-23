@@ -1,0 +1,12 @@
+Question: We have high-dimensional data from RGB images, and you want to estimate Gaussian distributions (characterized by mean vectors and covariance matrices) for different visual classes. The calculation determines how many samples are needed to accurately estimate these parameters for each class based on the given parameter estimation criterion.
+
+Information: 
+32x32 RGB Images: Each image has 32x32 pixels, and it's an RGB image, so it has 3 color channels (red, green, blue). This means that each image can be represented as a data vector x with 32 * 32 * 3 = 3072 dimensions.
+
+Single Gaussian per Visual Class: The goal is to estimate a Gaussian distribution for each visual class (e.g., bike, car, dog), and each class will have its own mean vector μ and covariance matrix Σ.
+
+Data vector x has D-dimension = 3072
+
+μ has the same dimension as x: 3072
+Σ has DxD dimension, but only diagonal value is usable, therefore, we can use a triangle formula: D(D+1)/2 = 3072x(3072+1)/2 = 4 720 128
+Total number of samples per class: (3072 + 4 720 128)x3 = 14 169 600 
